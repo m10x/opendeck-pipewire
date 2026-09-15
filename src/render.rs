@@ -126,7 +126,7 @@ pub fn label_bar_key(
 	let y = text_y(ui.icon().is_some(), 64);
 	let svg = format!(
 		r##"<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
-{icon}<text x="64" y="{y}" font-family="sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">{text}</text>
+{icon}<text x="64" y="{y}" font-family="sans-serif" font-size="40" font-weight="bold" fill="#ffffff" text-anchor="middle">{text}</text>
 <rect x="14" y="92" width="100" height="12" rx="6" fill="#3a3a3a"/>
 <rect x="14" y="92" width="{fill_w}" height="12" rx="6" fill="{bar}"/>
 {slash}</svg>"##,
@@ -305,7 +305,7 @@ mod tests {
 			&BarColors::default(),
 			&ui_with(None),
 		));
-		assert!(svg.contains(r#"font-size="48""#));
+		assert!(svg.contains(r#"font-size="40""#));
 		assert!(svg.contains(">Brave<"));
 	}
 
